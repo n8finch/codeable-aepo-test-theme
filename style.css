@@ -1,7 +1,7 @@
 /*!
-	Theme Name: Genesis Sass Bourbon Neat Grunt Dev Theme
+	Theme Name: AEPO Genesis Child Theme
 	Theme URI: https://www.n8finch.com/
-	Description: Genesis Sample Theme with Sass and Grunt, no modules, autoloaders, etc.
+	Description: A Genesis Child Theme with Sass and Grunt, no modules, autoloaders, etc.
 	Author: Nate Finch
 	Author URI: http://www.n8finch.com/
 
@@ -1383,6 +1383,11 @@ img.alignright,
 
 .site-footer .genesis-nav-menu a {
   padding: 0 20px 10px;
+}
+
+e
+.bx-wrapper ul.gray li img, .bx-wrapper ul.grayhovercolor li img {
+  filter: opacity(30%);
 }
 
 /* ## Entries
