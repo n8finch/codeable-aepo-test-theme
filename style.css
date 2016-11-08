@@ -777,6 +777,11 @@ th:first-child {
   max-width: 800px;
 }
 
+@media only screen and (max-width: 860px) {
+  .site-inner {
+    padding: 0 !important;
+  }
+}
 /* ## Column Widths and Positions
 --------------------------------------------- */
 /* ### Wrapping div for .content and .sidebar-primary */
@@ -1229,6 +1234,12 @@ img.alignright,
   margin: 0 auto;
   max-width: 300px;
   padding: 0;
+  margin-left: 60px;
+}
+@media only screen and (max-width: 860px) {
+  .header-image .title-area {
+    margin-left: 0;
+  }
 }
 .header-image .site-title > a {
   background-position: center !important;
@@ -1453,6 +1464,74 @@ img.alignright,
 #aepo-latest-posts-section #aepo-latest-posts-container .latest-post {
   flex: 1;
   max-width: 280px;
+  height: 300px;
+  transition: height 1s;
+}
+#aepo-latest-posts-section #aepo-latest-posts-container .latest-post:hover {
+  height: 310px;
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.5);
+}
+
+.hover-tile-outer {
+  background-color: beige;
+  background-position: top;
+  background-size: cover;
+  border: 1px solid gainsboro;
+  cursor: pointer;
+  height: 300px;
+  margin-bottom: 1.5em;
+}
+@media screen and (min-width: 40em) {
+  .hover-tile-outer {
+    width: 40%;
+  }
+}
+.hover-tile-outer h6 {
+  padding: 0 !important;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.hover-tile-outer .hover-tile-container {
+  height: 310px;
+  overflow: hidden;
+}
+.hover-tile-outer .hover-tile-container:hover > .hover-tile {
+  transform: translate(0, -100%);
+}
+.hover-tile-outer .hover-tile {
+  color: white;
+  height: 300px;
+  overflow: hidden;
+  padding: 1.5em;
+  transition: all 0.2s ease-in-out;
+}
+.hover-tile-outer .hover-tile-visible {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hover-tile-outer .hover-tile-hidden {
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 320px;
+  top: 10px;
+  padding: 0;
+  margin-top: 20px;
+}
+.hover-tile-outer .hover-tile-hidden a {
+  color: white;
+}
+.hover-tile-outer .hover-tile-hidden p {
+  line-height: 1.5em;
+  margin: 0 0 20px;
+}
+.hover-tile-outer .hover-tile-hidden .hover-tile-read-all {
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 /**
@@ -1508,6 +1587,11 @@ img.alignright,
 #aepo-testimonials-section {
   padding: 50px;
 }
+@media only screen and (max-width: 860px) {
+  #aepo-testimonials-section {
+    padding: 10px;
+  }
+}
 #aepo-testimonials-section h4 {
   padding: 40px;
 }
@@ -1516,8 +1600,18 @@ img.alignright,
   padding: 10px 25%;
   text-align: left;
 }
+@media only screen and (max-width: 860px) {
+  #aepo-testimonials-section .easy_t_single_testimonial blockquote.easy_testimonial {
+    padding: 0;
+  }
+}
 #aepo-testimonials-section p.testimonial_author {
   margin-left: 60px;
+}
+@media only screen and (max-width: 860px) {
+  #aepo-testimonials-section p.testimonial_author {
+    margin-left: 0;
+  }
 }
 #aepo-testimonials-section cite {
   font-style: normal;
@@ -1525,8 +1619,14 @@ img.alignright,
 #aepo-testimonials-section span.testimonial-client {
   display: block;
   float: left;
-  max-width: 90px;
+  max-width: 100px;
   font-weight: bold;
+}
+@media only screen and (max-width: 860px) {
+  #aepo-testimonials-section span.testimonial-client {
+    float: none;
+    max-width: 100%;
+  }
 }
 
 /**
@@ -1552,11 +1652,18 @@ img.alignright,
   font-family: Nunito, sans-serif;
   font-weight: 400;
 }
+@media only screen and (max-width: 860px) {
+  #aepo-how-was-that-section button {
+    max-width: 220px;
+    padding: 0;
+    margin-top: 10px;
+  }
+}
 #aepo-how-was-that-section button:hover {
   background-color: #ffffff;
   border: 1px solid #ddd;
   font-weight: 600;
-  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.5);
 }
 
 /**

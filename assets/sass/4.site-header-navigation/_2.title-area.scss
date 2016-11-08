@@ -31,6 +31,12 @@
     margin: 0 auto;
     max-width: 300px;
     padding: 0;
+    margin-left: 60px;
+
+    @media only screen and (max-width: 860px) {
+
+      margin-left: 0;
+    }
   }
 
   .site-title > a {

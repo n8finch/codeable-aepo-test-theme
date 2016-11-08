@@ -62,26 +62,32 @@ function aepo_homepage_content() {
 				$post_ID = $post->ID;
 				$post_permalink = $post->guid;
 				$post_title = $post->post_title;
-				$post_date = $post->post_date;
+				$post_date = $post->post_date_gmt;
+				$post_date = date_format( date_create($post_date), 'd M Y');
 				$post_content = strip_tags($post->post_content);
-				$post_content = substr($post_content, 0, 25);
+				$post_content = substr($post_content, 0, 75);
 				$post_thumb = get_the_post_thumbnail_url($post_ID);
 
 
-
 				?>
-				<div class="latest-post">
-					<img src="<?php echo $post_thumb; ?>"/>
-					<h4><?php echo $post_title; ?></h4>
-					<a href="<?php echo $post_permalink; ?>">
-					<div class="aepo-latest-posts-hover-card">
-						<h4><?php echo $post_title; ?></h4>
-						<span><?php echo $post_date?></span>
-						<p><?php echo $post_content; ?></p>
-						<p>Read all</p>
-					</div>
-					</a>
 
+				<div class="latest-post hover-tile-outer" style="background-image: url('<?php echo $post_thumb ?>');">
+					
+					<div class="hover-tile-container">
+						<div class="hover-tile hover-tile-visible">
+							<h6><?php echo $post_title; ?></h6>
+						</div>
+						<div class="hover-tile hover-tile-hidden">
+							<a href="<?php echo $post_permalink; ?>">
+
+							<h6><?php echo $post_title; ?></h6>
+							<span><?php echo $post_date?></span>
+							<p><?php echo $post_content; ?>...</p>
+							<p class="hover-tile-read-all">Read all</p>
+							</a>
+						</div>
+
+					</div>
 				</div>
 
 				<?php

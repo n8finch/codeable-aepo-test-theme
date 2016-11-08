@@ -65,11 +65,100 @@
     .latest-post {
       flex: 1;
       max-width: 280px;
+      height: 300px;
+      transition: height 1s;
+    }
+
+    .latest-post:hover {
+      height: 310px;
+      box-shadow: 0 0 40px 0 rgba(0,0,0,0.50);
     }
 
   }
 
 }
+
+.hover-tile-outer {
+  $base-border-color: gainsboro !default;
+  $base-line-height: 1.5em !default;
+  $medium-screen: 40em !default;
+  $hover-tile-height: 300px;
+  $base-spacing: 1.5em;
+
+  background-color: beige;
+  background-position: top;
+  background-size: cover;
+  border: 1px solid $base-border-color;
+  cursor: pointer;
+  height: $hover-tile-height;
+  margin-bottom: $base-line-height;
+
+  @include media($medium-screen) {
+    width: 40%;
+  }
+
+  h6 {
+    padding: 0 !important;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .hover-tile-container {
+    height: 310px;
+    overflow: hidden;
+  }
+
+  .hover-tile-container:hover > .hover-tile {
+    transform: translate(0, -100%);
+  }
+
+  .hover-tile {
+    //background: inherit;
+    color: white;
+    height: 300px;
+    overflow: hidden;
+    padding: $base-spacing;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .hover-tile-visible {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hover-tile-hidden {
+    background: transparentize(#000, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 320px;
+    top: 10px;
+    padding: 0;
+    margin-top: 20px;
+
+    a {
+      color: white;
+    }
+
+    p {
+      line-height: $base-line-height;
+      margin: 0 0 20px;
+    }
+
+    .hover-tile-read-all {
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+  }
+}
+
+
+
+
 
 /**
  * Why Hire Us
@@ -144,6 +233,10 @@
 #aepo-testimonials-section {
   padding: 50px;
 
+  @media only screen and (max-width: 860px) {
+    padding: 10px;
+  }
+
   h4 {
     padding: 40px;
   }
@@ -152,10 +245,18 @@
     border: 0;
     padding: 10px 25%;
     text-align: left;
+
+    @media only screen and (max-width: 860px) {
+      padding: 0;
+    }
   }
 
   p.testimonial_author {
     margin-left: 60px;
+
+    @media only screen and (max-width: 860px) {
+      margin-left: 0;
+    }
   }
 
   cite {
@@ -165,8 +266,13 @@
   span.testimonial-client {
     display: block;
     float: left;
-    max-width: 90px;
+    max-width: 100px;
     font-weight: bold;
+
+    @media only screen and (max-width: 860px) {
+      float: none;
+      max-width: 100%;
+    }
   }
 
 }
@@ -195,13 +301,19 @@
     border: 1px solid #ddd;
     font-family: Nunito, sans-serif;
     font-weight: 400;
+
+    @media only screen and (max-width: 860px) {
+      max-width: 220px;
+      padding: 0;
+      margin-top: 10px;
+    }
   }
 
   button:hover {
     background-color: #ffffff;
     border: 1px solid #ddd;
     font-weight: 600;
-    box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.50);
+    box-shadow: 0 0 40px 0 rgba(0,0,0,0.50);
   }
 
 
