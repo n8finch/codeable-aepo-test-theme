@@ -34,31 +34,31 @@ function aepo_homepage_content() {
 	</section>
 
 	<!-- We Are AEPO Section -->
-	<section id="aepo-we-are-section" class="section-class">
+	<section id="aepo-we-are-section" class="aepo-white-section">
 
-			<h2><?php echo $intro_section_title; ?></h2>
+			<h4><?php echo $intro_section_title; ?></h4>
 			<?php echo $intro_section_content; ?>
 
 	</section>
 
 	<!-- Latest Posts Section -->
-	<section id="aepo-latest-posts-section" class="section-class">
-		<h2><?php echo $latest_posts_title;?></h2>
+	<?php
+
+	$args = array(
+		'posts_per_page' => 3,
+		'post_type'        => 'post',
+	);
+
+	$myposts = get_posts( $args );
+	?>
+	<section id="aepo-latest-posts-section" class="aepo-off-white-section">
+		<h4><?php echo $latest_posts_title;?></h4>
 		<div id="aepo-latest-posts-container">
 
 			<?php
-
-			$args = array(
-				'posts_per_page' => 3,
-				'post_type'        => 'post',
-			);
-
-			$myposts = get_posts( $args );
-			$i = 1;
 			foreach ( $myposts as $post ) {
 
 				//Get the variables for each post
-				$is_first = $i === 1 ? 'first' : '' ;
 				$post_ID = $post->ID;
 				$post_permalink = $post->guid;
 				$post_title = $post->post_title;
@@ -70,7 +70,7 @@ function aepo_homepage_content() {
 
 
 				?>
-				<div class="one-third <?php echo $is_first; ?>">
+				<div class="latest-post">
 					<img src="<?php echo $post_thumb; ?>"/>
 					<h4><?php echo $post_title; ?></h4>
 					<a href="<?php echo $post_permalink; ?>">
@@ -87,31 +87,28 @@ function aepo_homepage_content() {
 				<?php
 			$i++;
 			} //endforeach
-			wp_reset_postdata();
 			?>
 
 		</div> <!--End Latest Posts Container-->
 	</section>
 
 	<!-- Why Hire Us Section -->
-	<section id="aepo-hire-us-section" class="section-class">
-		<h2><?php echo $hire_us_title; ?></h2>
+	<section id="aepo-hire-us-section" class="aepo-white-section">
+		<h4><?php echo $hire_us_title; ?></h4>
 		<div class="aepo-hire-us-container">
 
 			<?php
 
 			// check if the repeater field has rows of data
 			if( have_rows('hire_us_elements') ):
-				$j = 1;
 				// loop through the rows of data
 				while ( have_rows('hire_us_elements') ) : the_row();
-					$is_first = $j%2 === 1 ? 'first' : '' ;
 					?>
-					<div class="one-half <?php echo $is_first; ?>">
-						<span>
+					<div class="aepo-hire-us-elements">
+						<span class="aepo-hire-us-image">
 							<img src="<?php the_sub_field('hire_us_icon'); ?>">
 						</span>
-						<span>
+						<span class="aepo-hire-us-text">
 							<?php the_sub_field('hire_us_text'); ?>
 						</span>
 					</div>
@@ -131,15 +128,15 @@ function aepo_homepage_content() {
 	</section>
 
 	<!-- Our Clients Section -->
-	<section id="aepo-our-clients-section" class="section-class">
-		<h2>Our Clients</h2>
+	<section id="aepo-our-clients-section" class="aepo-off-white-section">
+		<h4>Our Clients</h4>
 		<?php kw_sc_logo_carousel($our_clients_carousel_id); ?>
 
 	</section>
 
 	<!-- From Our Clients Testimonials Section -->
-	<section id="aepo-testimonials-section" class="section-class">
-		<h2><?php echo $testimonials_tile; ?></h2>
+	<section id="aepo-testimonials-section" class="aepo-white-section">
+		<h4><?php echo $testimonials_tile; ?></h4>
 		<div>
 		<?php echo do_shortcode($testimonials_shortcode); ?>
 		</div>
@@ -147,8 +144,8 @@ function aepo_homepage_content() {
 	</section>
 
 	<!-- How Was That Section -->
-	<section id="aepo-how-was-that-section" class="section-class">
-		<h2><?php echo $how_was_that_title; ?></h2>
+	<section id="aepo-how-was-that-section" class="aepo-off-white-section">
+		<h4><?php echo $how_was_that_title; ?></h4>
 		<p><?php echo $how_was_that_content; ?></p>
 		<p>
 			<a href="<?php echo $how_was_that_button_1_link?>" >

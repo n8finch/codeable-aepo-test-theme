@@ -9,6 +9,13 @@
   line-height: 1;
   padding: 60px 0;
   text-align: center;
+
+  .genesis-nav-menu a {
+    font-size: 10px;
+    color: $base__color_light;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
 }
 
 .site-footer p {

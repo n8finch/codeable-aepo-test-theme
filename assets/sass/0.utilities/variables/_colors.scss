@@ -7,20 +7,21 @@
 $white: #fff;
 $black: #000;
 
-$base__color: #333;
+$base__color: #313F48;
+$base__color_light: #54636D;
 $body__backgroundColor: #eee;
 
-$link__color: #c3251d;
-$link__hover: #333;
-$link__focus: #333;
+$link__color: $base__color;
+$link__hover: $base__color_light;
+$link__focus: $base__color;
 
 
 //
 // Navigation Colors
 //
 
-$nav__linkColor: #333;
-$nav__hoverColor: #c3251d;
+$nav__linkColor: $base__color;
+$nav__hoverColor: $base__color_light;
 $submenu__borderColor: #eee;
 $submenu__linkBackgroundColor: $white;
 
