@@ -804,6 +804,7 @@ th:first-child {
 .content {
   float: right;
   width: 880px;
+  text-align: center;
 }
 
 .content-sidebar .content,
